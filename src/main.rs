@@ -1,35 +1,30 @@
+//! Le point d'entrée.
+//!
+//! Il monte les parties et lance la séance sur le clavier et l'écran.
+
 mod command;
 mod execute;
+mod reply;
+mod session;
 mod store;
 
-use command::parse;
-use execute::execute;
-use std::io::{self, BufRead, Write};
+use std::io::{self, BufReader};
+use std::process::ExitCode;
 use store::Store;
 
-fn main()
+fn main() -> ExitCode
 {
+    let mut entree = BufReader::new(io::stdin().lock());
+    let mut sortie = io::stdout().lock();
     let mut store = Store::new();
-    let entree = io::stdin();
-    loop
+
+    match session::dialogue(&mut entree, &mut sortie, &mut store)
     {
-        print!("> ");
-        io::stdout().flush().unwrap();
-        let mut ligne = String::new();
-        match entree.lock().read_line(&mut ligne)
+        Ok(()) => ExitCode::SUCCESS,
+        Err(erreur) =>
         {
-            Ok(0) => break,          // fin d'entrée (Ctrl-D)
-            Ok(_) => {}
-            Err(e) =>
-            {
-                eprintln!("erreur de lecture : {e}");
-                break;
-            }
-        }
-        match parse(&ligne)
-        {
-            Ok(commande) => println!("{}", execute(commande, &mut store)),
-            Err(message) => println!("ERR {message}"),
+            eprintln!("la séance s'est interrompue : {erreur}");
+            ExitCode::FAILURE
         }
     }
 }
