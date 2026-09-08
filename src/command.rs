@@ -47,7 +47,7 @@ pub enum Command
     Dbsize,
     /// Vide le stockage.
     Flushall,
-    /// Termine la séance.
+    /// Termine la session.
     Quit,
 }
 

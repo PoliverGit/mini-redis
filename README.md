@@ -6,14 +6,14 @@ Un stockage de valeurs en mémoire, interrogé au clavier.
 
 On lance le programme, une invite `>` s'affiche, on tape une ligne, le
 programme répond, et ainsi de suite jusqu'à ce qu'on lui demande de s'arrêter.
-Tout ce qui est rangé ne dure que le temps de la séance : quand le programme se
+Tout ce qui est rangé ne dure que le temps de la session : quand le programme se
 termine, le stockage disparaît.
 
 Le travail est découpé en cinq rôles :
 
 | Fichier | Rôle |
 |---|---|
-| `src/main.rs` | Monte les parties et lance la séance sur le clavier et l'écran. |
+| `src/main.rs` | Monte les parties et lance la session sur le clavier et l'écran. |
 | `src/session.rs` | Tient le fil du dialogue : invite, lecture, réponse, recommencer. |
 | `src/command.rs` | Traduit une ligne tapée en demande claire, ou la refuse en expliquant pourquoi. |
 | `src/execute.rs` | Fait ce que la demande réclame, en s'adressant au stockage. |
@@ -39,7 +39,7 @@ Documents de conception : [CONTRAINTES.md](CONTRAINTES.md) et
 | `INCR cle` | Augmente de un une valeur entière. |
 | `DBSIZE` | Compte les clés du stockage. |
 | `FLUSHALL` | Vide le stockage. |
-| `QUIT` / `EXIT` | Termine la séance. |
+| `QUIT` / `EXIT` | Termine la session. |
 
 ## Tester
 

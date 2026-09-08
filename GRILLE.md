@@ -37,6 +37,8 @@ abordée, aucune commande n'est citée, aucune forme de réponse n'est montrée.
 - `~` 1.1 À quoi sert le projet, qui s'en sert, et qui répond
 - `~` 1.2 Les étapes d'un échange, du texte tapé jusqu'à l'affichage
 - `~` 1.3 Ce qui est gardé, où, et combien de temps
+- `~` 1.4 Pourquoi rien n'est transmis : le client et le serveur sont la même
+      session (Q) ← 1.1
 
 ## Couche 2 — Les fichiers
 
@@ -112,6 +114,17 @@ l'implémentation.
 Ce que les réponses ont montré, point par point. Pas les questions, pas les
 réponses : ce qui a coincé et ce qui est passé.
 
+- **1.1, 1.2, 3.5, 1.4** — Vue d'ensemble reprise au format 2. L'ossature d'un
+  échange est juste du premier coup, et la péremption constatée au moment où on
+  regarde ressort spontanément (4.6 tient toujours). Deux erreurs : une
+  transmission imaginée entre deux programmes distincts, avec redirection
+  d'entrée et de sortie, alors qu'il n'y a qu'une seule session — d'où 1.4 ; et
+  une étape de vérification des éléments de la commande placée avant
+  l'exécution, qui rangeait encore la clé absente du côté du contrôle. Après
+  correction, le contrôle sépare juste les deux cas : dans un cas le stockage
+  est consulté et ne rend rien, dans l'autre la ligne s'arrête à la traduction.
+  3.5 tenu.
+
 - **4.11, 4.12, 4.13** — Nés d'une même suite de questions sur la péremption.
   4.11 : la forme de la réponse n'était pas connue, le fond l'était. 4.12 : la
   conséquence d'une omission a d'abord été comprise comme la disparition de la
@@ -161,7 +174,7 @@ Chaque bloc dit, en quelques phrases :
 - ce qui a été travaillé et ce qui a changé d'état ;
 - ce qui tient réellement, avec ce qui le prouve ;
 - ce qui résiste, et sous quelle forme l'erreur revient ;
-- ce qu'il faut reprendre en priorité à la séance suivante.
+- ce qu'il faut reprendre en priorité à la session suivante.
 
 C'est une appréciation, pas un relevé. On y dit franchement si la progression
 avance ou si un point stagne malgré plusieurs passages.
@@ -173,14 +186,14 @@ avance ou si un point stagne malgré plusieurs passages.
 **Travaillé.** La péremption, de bout en bout : ce qui est enregistré au dépôt,
 quand le retrait a lieu, ce que répond une demande de durée restante, et
 pourquoi aucun nettoyage ne tourne en fond. La méthode de travail a aussi été
-refondue en cours de séance — c'est l'utilisateur qui pose les questions
+refondue en cours de session — c'est l'utilisateur qui pose les questions
 désormais.
 
 **Ce qui tient.** Le moment du retrait est acquis, prouvé à distance : reposée
 sans préparation, la question a reçu une réponse juste et complète du premier
 coup — la valeur survit à l'attente et n'est retirée qu'au moment où une demande
 la regarde. C'est le seul point acquis à ce jour, mais il est solide, et il a
-servi d'appui à tout le reste de la séance.
+servi d'appui à tout le reste de la session.
 
 **Ce qui résiste.** Une même erreur revient sous deux formes. La clé absente est
 encore décrite comme une erreur, alors que c'est une réponse normale à une
