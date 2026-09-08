@@ -1,4 +1,4 @@
-//! La séance.
+//! La session.
 //!
 //! C'est le fil du dialogue : afficher l'invite, lire une ligne, la faire
 //! comprendre, la faire exécuter, écrire la réponse, recommencer.
@@ -13,7 +13,7 @@ use std::io::{self, BufRead, Write};
 /// Ce qui est affiché avant chaque ligne attendue.
 pub const INVITE: &str = "> ";
 
-/// Tient la séance jusqu'à son terme.
+/// Tient la session jusqu'à son terme.
 pub fn dialogue(
     entree: &mut impl BufRead,
     sortie: &mut impl Write,
@@ -88,7 +88,7 @@ mod tests
     }
 
     #[test]
-    fn ranger_puis_relire_dans_la_meme_seance()
+    fn ranger_puis_relire_dans_la_meme_session()
     {
         assert_eq!(
             jouer("SET pseudo paul\nGET pseudo\n"),
@@ -112,7 +112,7 @@ mod tests
     }
 
     #[test]
-    fn une_ligne_refusee_affiche_la_raison_et_la_seance_continue()
+    fn une_ligne_refusee_affiche_la_raison_et_la_session_continue()
     {
         assert_eq!(
             jouer("BONJOUR\nPING\n"),
@@ -121,13 +121,13 @@ mod tests
     }
 
     #[test]
-    fn quit_termine_la_seance_et_ignore_la_suite()
+    fn quit_termine_la_session_et_ignore_la_suite()
     {
         assert_eq!(jouer("QUIT\nPING\n"), "> OK\n");
     }
 
     #[test]
-    fn exit_termine_la_seance_aussi()
+    fn exit_termine_la_session_aussi()
     {
         assert_eq!(jouer("EXIT\n"), "> OK\n");
     }

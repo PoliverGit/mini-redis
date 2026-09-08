@@ -7,46 +7,42 @@ maîtriser l'écriture du code. Apprentissage et vérification, pas debug.
 
 ## Règles de communication
 
-- Réponses courtes. La réponse à la question posée, rien d'autre.
-- Ne jamais diverger vers des points annexes non demandés.
-- Ne jamais anticiper les questions de l'utilisateur. Les questions viennent de lui.
-- Une seule architecture présentée. Pas d'alternatives, pas de "on pourrait aussi".
-- Pas de vocabulaire technique de code dans les explications. On explique les rôles avec les mots du projet (client, serveur, commande, réponse, stockage, clé, valeur).
-- Exception unique : une contrainte réelle du langage peut être citée, seulement si elle est certaine et nécessaire à ce moment.
-- Ne pas hésiter à montrer le code dont on parle : c'est ce qui permet de
-  visualiser. On montre la fonction entière, pas un fragment coupé en son
-  milieu : sans son entête et ses cas, un morceau isolé ne se lit pas. Une
-  fonction, pas un fichier.
-- Chaque extrait est précédé d'un lien cliquable vers le fichier et la ligne,
-  sous la forme `[store.rs:20](src/store.rs:20)`, pour que le code puisse être
-  ouvert à côté dans son contexte réel.
-- L'extrait accompagne l'explication, il ne la remplace pas.
-- Trop d'information tue l'information. Dans le doute, en dire moins.
-- Aucune analogie, aucune métaphore, aucune comparaison imagée, aucune
-  personnification. On dit ce que la chose fait réellement, directement.
+Ces règles valent pour tout ce qui est produit : réponses dans le dialogue,
+documents du projet, commentaires du code.
 
-## Forme des explications
+- **Une ou deux phrases par défaut.** La réponse à la question posée, rien
+  d'autre. Une question fermée reçoit une réponse fermée.
+- **Commencer par la réponse.** Pas de préambule, pas de reformulation de la
+  question, pas de conclusion qui résume ce qui vient d'être dit.
+- **Ne pas diverger, ne pas anticiper.** Aucun point annexe non demandé. Les
+  questions viennent de l'utilisateur.
+- **Une seule architecture.** Pas d'alternatives, pas de « on pourrait aussi ».
+- **Aucune analogie, aucune métaphore, aucune personnification.** On dit ce que
+  la chose fait réellement.
+- **Les mots du projet, pas ceux du code** : client, serveur, commande, réponse,
+  stockage, clé, valeur. Une contrainte réelle du langage peut être citée, si
+  elle est certaine et nécessaire à ce moment.
 
-L'utilisateur a validé cette forme. La garder pour les explications à venir.
+## Ce qui ne vient que si la question l'appelle
 
-- Un tableau des cas quand il y en a plusieurs : la nature, ce qui s'affiche, ce
-  qui la produit. Vue d'ensemble avant le détail.
-- Suivre une valeur concrète de bout en bout, en la nommant : d'où elle vient,
-  par où elle passe, ce qu'elle devient à l'écran. Pas de description abstraite
-  du mécanisme.
-- Une ou deux fonctions montrées en entier, à l'endroit exact où la décision se
-  prend : celle où la donnée est constituée, celle où elle est utilisée. Chacune
-  précédée de son lien fichier et ligne.
-- Terminer sur la distinction qui compte, celle qui explique pourquoi c'est fait
-  ainsi et pas autrement.
-- Deux exemples opposés valent mieux qu'une règle générale : montrer deux cas
-  qui se ressemblent à l'écran et n'ont pas la même origine.
-- Lancer le programme et montrer sa sortie réelle plutôt que de la décrire.
+Tableau, extrait de code, développement : jamais par défaut. Quand ils sont
+justifiés :
 
-Cette forme s'applique au niveau de détail en cours et n'autorise jamais à le
-dépasser : dans une explication d'ensemble, ni tableau de commandes, ni extrait
-de code, ni formes d'affichage. On explique alors avec des phrases seules. Dès
-que la question descend dans le détail, la forme complète s'applique.
+- **Un extrait** est une fonction entière, jamais un fragment coupé en son
+  milieu. Une fonction, pas un fichier. Il est précédé de son lien cliquable,
+  sous la forme `[store.rs:20](src/store.rs:20)`. Il accompagne l'explication,
+  il ne la remplace pas.
+- **Un tableau** quand il y a plusieurs cas à comparer : la nature, ce qui la
+  produit, ce qui s'affiche.
+- **Une valeur suivie de bout en bout**, nommée : d'où elle vient, ce qu'elle
+  devient. Pas de description abstraite du mécanisme.
+- **Deux exemples opposés** valent mieux qu'une règle générale : deux cas qui se
+  ressemblent à l'écran et n'ont pas la même origine.
+- **La sortie réelle du programme**, lancé, plutôt que sa description.
+
+Le niveau de détail est celui de la question. Une explication d'ensemble
+s'écrit avec des phrases seules : ni tableau de commandes, ni extrait de code,
+ni formes d'affichage.
 
 ## Déroulé imposé
 
